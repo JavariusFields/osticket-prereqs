@@ -22,11 +22,11 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- Resource Group and Virtual Machine in Microsoft Azure
+- Install/Enable ISS in Windows with CGI and Common HTTP Features, ISS Management Console
+- PHP Manager for IIS, Rewrite Module
+- Unzip PHP files into PHP Directory
+- Visual C++ and MySQL
 
 <h2>Installation Steps</h2>
 
