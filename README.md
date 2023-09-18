@@ -74,17 +74,34 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <img width="990" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/aef259a8-fd94-49eb-b1d5-02822bd18fcf">
 <img width="746" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/85711de5-68a6-4afc-9566-cd3dc3150792">
 <img width="205" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/fd942cb5-8cec-403e-b0b6-3e5323ea2ee2">
-7.
-
-
-
-
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+7. Now we can install osTicket. To do that, we need to download osTicket v1.15.8. Once we download it, there is a folder called "upload" in the files. we need to drag that folder to C:\ -> inetpub -> wwwwroot. Dragging the folder here will automatically extract it. Once it is done, rename  the "upload" to "osTicket" (make sure to name this exactly as spelled ot you will run into some issues)
+<img width="1244" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/53844897-50d2-4fe7-a134-08a394fa07f1">
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+8. Now, we should be able to tell if the installation worked. To do that, we need to reload IIS. Remember to run it as an administrator. Once it is open, we need to stop and start the server again. Once we do that go to sites -> Default -> osTicket. On the right, click "Browse *.80". If you did it correctly, the osTicket website should pop up.
+<img width="985" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/621417b5-1878-4950-8934-8fe5ca80b76a">
+<img width="1365" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/91115f62-09ad-45d8-9873-dfa5449f43e5">
+9. Next, we need to enable some extensions that are not enabled. We can do this by going to IIS site -> Default -> osTicket. Click the PHP Manager then click "enable or disable an extension". Enable the following: php_imap.dll; php_intl.dll; php_opcache.dll. Refresh osTicket in the browser to make sure those are enabled.
+<img width="777" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/f8b5a7c5-a49e-40b0-abb6-33b6fdd4d05e">
+<img width="839" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/d4b2ffa6-df97-4b7c-8c29-35c3afc2fb3c">
+<p>
+10. We need to rename ost-sampleconfig.php. We can find it at C:\-> inetpub -> wwwwroot -> osTicket -> include. Rename it to ost-config.php
+<p>
+<img width="627" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/7b7e425c-4622-484e-b68b-9310fb08e3f0">
+<img width="718" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/f0744c3d-65ab-485c-87de-0e2c27da943b">
+<p>
+11. We need to assign permissions to the file that we just renamed. Right click -> Properties -> Advanced -> Disable Inheritance -> Remove All. Then click Add principal -> type everyone and check names -> check all boxes -> apply
+12. Continue setting up osTicket in the browser by clicking continue. 
+Name Helpdesk and set up a default email
+<img width="794" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/ff4282a4-5dfe-4de1-b62f-f4e9fc019b91">
+<p>
+13. Before we can go further, we need to install a database by downloading and installing HeidiSQL. Open HeidiSQL and create a new session. Connect to the session, create a database called osTicket. We can continue setting up osTicket in the browser. Once we enter the required information, click "Install Now". If we got no errors, we finally have osTicket installed.
+<img width="592" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/cdeb6f34-bd4a-4f6a-b5ac-b64961c805f3">
+<img width="621" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/6a80d17d-419f-4b0e-83cd-4fdb6dbda0ee">
+<img width="821" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/55f0789d-7cab-4e5a-9cfa-1a13e0d192c5">
 </p>
-<br />
+14. Finally, we need to clean up some files and set permissions. Delete the setup folder. You can find it C:\ -> inetpub -> wwwroot -> osTicket -> Delete entire setup folder. Go into osTicket -> include -> right click ost-config.php and change permissions to "Read" only
+Browse to your help desk login page: http://localhost/osTicket/scp/login.php  
+End Users osTicket URL: http://localhost/osTicket/ 
+<img width="904" alt="image" src="https://github.com/JavariusFields/osticket-prereqs/assets/144845191/87a4fe1a-73d6-4f78-970f-c062957738d4">
+
